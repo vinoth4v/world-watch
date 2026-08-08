@@ -6,8 +6,8 @@ import "@werft/tokens/tokens.css"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Werft app",
-  description: "Scaffolded from werft-template",
+  title: "World Watch",
+  description: "Global disruption map: active and historical hazard, security, and logistics events.",
 }
 
 export const viewport: Viewport = {

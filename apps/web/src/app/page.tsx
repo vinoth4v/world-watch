@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { signOutAction } from "@/app/actions"
 import { auth } from "@/auth"
 
@@ -9,11 +10,13 @@ export default async function HomePage() {
 
   return (
     <main>
-      <h1>Werft app</h1>
+      <h1>World Watch</h1>
       <p>
         Signed in as <strong>{session?.user?.email ?? "unknown"}</strong>.
       </p>
-      <p>Replace this page with the app you actually meant to build.</p>
+      <p>
+        <Link href="/map">Open the disruption map &rarr;</Link>
+      </p>
       <form action={signOutAction}>
         <button type="submit">Sign out</button>
       </form>
