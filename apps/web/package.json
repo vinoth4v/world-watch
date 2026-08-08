@@ -12,7 +12,8 @@
     "test:e2e": "playwright test",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node --experimental-strip-types scripts/migrate.ts",
-    "db:seed-sites": "node --experimental-strip-types scripts/seed-sites.ts"
+    "db:seed-sites": "node --experimental-strip-types scripts/seed-sites.ts",
+    "vercel-build": "node --experimental-strip-types scripts/vercel-build.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.1.0",
