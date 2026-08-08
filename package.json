@@ -16,7 +16,6 @@
     "format": "biome check --write .",
     "db:generate": "pnpm --filter web run db:generate",
     "db:migrate": "pnpm --filter web run db:migrate",
-    "hash-password": "node --experimental-strip-types apps/web/scripts/hash-password.ts",
     "create-app": "node --experimental-strip-types packages/create-werft-app/src/cli.ts",
     "werft-password": "node --experimental-strip-types packages/create-werft-app/src/password-cli.ts",
     "retire-app": "node --experimental-strip-types packages/create-werft-app/src/retire-cli.ts"

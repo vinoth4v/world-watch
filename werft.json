@@ -7,7 +7,6 @@
     "typescript",
     "neon",
     "drizzle",
-    "next-auth",
     "vercel"
   ],
   "url": "https://world-watch-seven.vercel.app",

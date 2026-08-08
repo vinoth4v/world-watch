@@ -1,7 +1,7 @@
 import { db } from "@/db/client"
 import { auditLog } from "@/db/schema"
 
-export type AuditKind = "sign_in" | "sign_in_failed"
+export type AuditKind = string
 
 /**
  * Write an audit row, swallowing failures.
