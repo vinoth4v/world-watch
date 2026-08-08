@@ -95,3 +95,62 @@ button:active {
   border: 1px solid var(--color-danger);
   border-radius: var(--radius-md);
 }
+
+.date-filter {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.date-filter button {
+  align-self: flex-end;
+}
+
+.world-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.world-map__ocean {
+  fill: var(--color-bg);
+}
+
+.world-map__graticule {
+  stroke: var(--color-border);
+  stroke-width: 0.25;
+}
+
+.world-map__land {
+  fill: var(--color-muted);
+  fill-opacity: 0.35;
+  stroke: var(--color-muted);
+  stroke-width: 0.4;
+}
+
+.world-map__marker {
+  fill: var(--color-danger);
+  stroke: var(--color-bg);
+  stroke-width: 0.5;
+}
+
+.alert-list {
+  padding: 0;
+  margin: 0 0 var(--space-6);
+  list-style: none;
+}
+
+.alert-list li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.alert-list time {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
