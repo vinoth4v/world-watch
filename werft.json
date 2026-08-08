@@ -1,0 +1,21 @@
+{
+  "name": "world-watch",
+  "title": "World Watch",
+  "description": "real-time and historical map showing where natural hazards, security incidents, conflicts, and other major disruptions are happening around the world.",
+  "stack": [
+    "next",
+    "typescript",
+    "neon",
+    "drizzle",
+    "next-auth",
+    "vercel"
+  ],
+  "url": "",
+  "tags": [
+    "world",
+    "news",
+    "warnings"
+  ],
+  "status": "prototype",
+  "private": false
+}
