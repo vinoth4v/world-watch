@@ -7,6 +7,9 @@ test("the dashboard is readable without signing in", async ({ page }) => {
   await page.goto("/")
 
   await expect(page).not.toHaveURL(/\/login/)
+  // `/` is the app, not a welcome page: it lands on the dashboard itself.
+  await expect(page).toHaveURL(/\/map/)
+  await expect(page.getByRole("heading", { name: /disruption map/i })).toBeVisible()
 })
 
 test("writing still requires the operator, even though reading does not", async ({ request }) => {
