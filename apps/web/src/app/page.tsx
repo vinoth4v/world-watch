@@ -1,25 +1,18 @@
-import Link from "next/link"
-import { signOutAction } from "@/app/actions"
-import { auth } from "@/auth"
+import { redirect } from "next/navigation"
 
-// Reads the session cookie, so there is nothing to prerender.
-export const dynamic = "force-dynamic"
-
-export default async function HomePage() {
-  const session = await auth()
-
-  return (
-    <main>
-      <h1>World Watch</h1>
-      <p>
-        Signed in as <strong>{session?.user?.email ?? "unknown"}</strong>.
-      </p>
-      <p>
-        <Link href="/map">Open the disruption map &rarr;</Link>
-      </p>
-      <form action={signOutAction}>
-        <button type="submit">Sign out</button>
-      </form>
-    </main>
-  )
+/**
+ * The app lives at `/`.
+ *
+ * This page used to be the template's placeholder — "replace this page with the
+ * app you actually meant to build" — with a link to the real dashboard beneath
+ * it. So the production URL showed a placeholder and a link, which reads as
+ * nothing having been built, and made the operator click past a welcome page to
+ * reach their own app.
+ *
+ * The dashboard keeps its own address because it is a real route with its own
+ * server actions and search params; `/` redirects to it rather than duplicating
+ * it. AGENTS.md permits exactly this shape and forbids the link.
+ */
+export default function HomePage() {
+  redirect("/map")
 }
