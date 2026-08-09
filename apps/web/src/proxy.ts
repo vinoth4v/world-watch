@@ -6,16 +6,27 @@ import { authConfig } from "@/auth.config"
 export default NextAuth(authConfig).auth
 
 /**
- * Everything is private unless listed here. Closed by default is the whole
- * point of the single-user gate: a new route is protected because it exists,
- * not because someone remembered to protect it.
+ * This app is a public dashboard, which is a deliberate departure from the
+ * template it came from.
  *
- * icon.svg is where Next serves app/icon.svg from — without the exemption,
- * the favicon 307s to /login for anyone signed out and the tab shows a
- * broken icon. Any future route that must be reachable without a session
- * (an API other services call, say) needs its own entry here too, or every
- * caller silently gets a redirect instead of the route.
+ * Werft apps are closed by default — every route requires the operator's
+ * session because it exists, not because someone remembered. That is the right
+ * default and it stays the template's. This app is the exception: the
+ * disruption map is meant to be readable by anyone with the link, so the pages
+ * are open.
+ *
+ * **What is still closed, and why.** `api/ingest` is a POST that fetches from
+ * USGS and writes rows to this app's database. Public pages are a choice;
+ * a public write endpoint is a liability — anyone with the URL could fill the
+ * database or hammer USGS from this app's address. Reading is open, writing
+ * needs the operator's session. Refreshing the data therefore still requires
+ * signing in, which is why the login page remains.
+ *
+ * The inversion is the thing to be careful about: this matcher now lists what
+ * is *protected* rather than what is exempt, so a new route is public unless
+ * added here. A future route that writes anything must be added, and nothing
+ * will remind you.
  */
 export const config = {
-  matcher: ["/((?!api/auth|login|_next/static|_next/image|favicon.ico|icon.svg).*)"],
+  matcher: ["/api/ingest/:path*"],
 }
